@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <HelloWorld />
-      <Greet/>
+      <Greet name = 'Cobra' />
     </div>
     
   )
