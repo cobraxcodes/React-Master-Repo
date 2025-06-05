@@ -1,13 +1,13 @@
- import HelloWorld from './HelloWorld.jsx'
-import Greet from './Greeting.jsx'
+import Hello from './Hello.jsx'
+import Counter from './Counter.jsx'
 
 function App() {
   return (
     <div>
-      <HelloWorld />
-      <Greet name = 'Cobra' />
+   <Hello name="Cobra" age={24}  hobby = "Reading Books"/>
+   <Counter />
     </div>
-    
+
   )
 }
 
