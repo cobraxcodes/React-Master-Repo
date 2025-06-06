@@ -1,16 +1,8 @@
 // // // // // 📝 5 Mini Challenges For You:
 // // // // // 1️⃣ Create a ThemeContext that stores a darkMode boolean and toggle it with a button in any child component.
-
-
 // // // // // 2️⃣ Build a CartContext to store an array of product names and display them in a Cart component.
-
-
 // // // // // 3️⃣ Create a LanguageContext to store a selected language string (like "en", "es", "fr") and show a message in that language.
-
-
 // // // // // 4️⃣ Build a CounterContext and access the count value in two separate sibling components (like buttons or text displays).
-
-
 // // // // // 5️⃣ Make a UserContext to store a user’s name and avatar URL, and render them in a UserProfile component.
 
 
@@ -49,9 +41,6 @@
 // // import React, { useContext } from "react";
 // // import { AppContext } from "./AppContext"; // 📥 Import your context
 
-
-
-
 // // function Profile() {
 // //   // 📡 Access the context value using useContext
 // //   const { userName, setUserName } = useContext(AppContext);
@@ -77,10 +66,6 @@
 // import ReactDOM from "react-dom/client";
 // import AppProvider from "./AppProvider"; // 📥 Your provider component
 // import Profile from "./Profile";
-
-
-
-
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
 //   // 🛠️ Wrap your app inside the provider to give it access to context
