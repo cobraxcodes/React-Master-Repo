@@ -1,5 +1,6 @@
 import StateLiftCount from "./stateLifting/ChildrenCount"
 import TextParent from "./stateLifting/TextInput"
+import ColorPicker from "./stateLifting/ColorPicker"
 // // 🔄 Mini Challenges: useEffect
 // // 👉 Create components that respond to side effects like state changes, window events, or mounting.
 // function App(){
@@ -33,6 +34,7 @@ function App(){
     <div>
       <StateLiftCount />
       <TextParent />
+      <ColorPicker />
 
     </div>
   )
