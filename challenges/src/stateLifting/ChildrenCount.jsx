@@ -1,3 +1,6 @@
+// 1️⃣ Counter Reset Button in Parent:
+// Add a button in the Parent component that resets the count to 0.
+
 import { useState } from "react";
 
 function Parent(){

@@ -1,4 +1,5 @@
-import StateLiftCount from "./StateLiftCount"
+import StateLiftCount from "./stateLifting/ChildrenCount"
+import TextParent from "./stateLifting/TextInput"
 // // 🔄 Mini Challenges: useEffect
 // // 👉 Create components that respond to side effects like state changes, window events, or mounting.
 // function App(){
@@ -31,6 +32,7 @@ function App(){
   return(
     <div>
       <StateLiftCount />
+      <TextParent />
 
     </div>
   )
