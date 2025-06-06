@@ -69,11 +69,6 @@
 // Child A selects a color from a dropdown.
 // Child B displays a box filled with the selected color.
 
-// 4️⃣ Toggle Visibility of Both Children:
-// Parent holds a showChildren state (boolean).
-// Add a button in the Parent to toggle whether Child A and Child B are shown.
-// Both children disappear and reappear together.
-
 // 5️⃣ Two Number Inputs in Siblings That Add Up:
 // Child A has a number input.
 // Child B has another number input.
