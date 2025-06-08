@@ -1,4 +1,4 @@
-// 1️⃣ Counter Reset Button in Parent:
+// 1️⃣ Counter Reset Button in Parent: increase and decrease count
 // Add a button in the Parent component that resets the count to 0.
 
 import { useState } from "react";
@@ -7,7 +7,7 @@ function Parent(){
     const [count, setCount] = useState(0)
     return(
         <div>
-            <h1> Parent Component </h1>
+            <h1> Number {count} </h1>
             <ChildA count={count} setCount={setCount}/>
             <ChildB count={count} setCount={setCount} />
         </div>
@@ -18,7 +18,7 @@ function Parent(){
         return(
             <div>
                <h3>Child A</h3>
-               <p>Count in Child A {count}</p>
+               <p>Increase The Number:</p>
                <button onClick={() => setCount(count + 1)}>INCREASE</button>
             </div>
         )
@@ -29,7 +29,7 @@ function Parent(){
         return(
             <div>
                 <h3>Child B</h3>
-                <p>Count in Child B: {count}</p>
+                <p>Decrease the number:</p>
                 <button onClick={() => setCount(count -1)}>DECREASE</button>
             </div>
         )
