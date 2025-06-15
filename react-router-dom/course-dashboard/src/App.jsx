@@ -14,6 +14,7 @@ import Login from './Login'
 import Lessons from './Lessons';
 import Protect from './Protect';
 import Courses from './Courses';
+import CourseDetails from './CourseDetails';
 
 
 function App(){
@@ -40,7 +41,9 @@ function App(){
                     <Courses />
                 </Protect>
             }/>
+            <Route path='/courses/:id' element={<CourseDetails />}/>
             </Routes>
+            
 
             </BrowserRouter>
         </div>
