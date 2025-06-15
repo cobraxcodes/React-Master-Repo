@@ -18,7 +18,7 @@ function Login({setUserLoggedIn}){
         event.preventDefault()
         if(username === "iamadmin" && password==="Admin123"){
             setUserLoggedIn(true)
-            navigate('/RegisterForm')
+            navigate('/register')
         }else{
             setError(true)
         }
