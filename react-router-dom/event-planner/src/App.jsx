@@ -2,7 +2,7 @@
 // 📃 Home.jsx 1. -done
 // 📃 Events.jsx 2. -done
 // 📃 EventDetails.jsx (last)
-// 📃 RegisterForm.jsx (protected) 6.
+// 📃 RegisterForm.jsx (protected) - done
 // PROTECT.jsx 5. -done
 // 📃 Login.jsx 4. -done
 
@@ -15,6 +15,7 @@ import Events from './Events'
 import Login from './Login'
 import Protect from './Protect'
 import RegisterForm from './RegisterForm'
+import EventDetails from './EventDetails'
 
 function App(){
     const [userLoggedIn, setUserLoggedIn]=useState(false)
@@ -31,7 +32,7 @@ function App(){
 
             <Routes>
             <Route path='/' element={<Home />}/>
-            <Route path='/events' element={<Events />} />
+            <Route path='/events' element={<Events />}/>
             <Route path='/login' element={
                 <Login setUserLoggedIn={setUserLoggedIn} />
             }/>
@@ -40,6 +41,7 @@ function App(){
                     <RegisterForm />
                 </Protect>
             }/>
+            <Route path='/events/:id' element={<EventDetails />} />
 
             </Routes>
             </BrowserRouter>
