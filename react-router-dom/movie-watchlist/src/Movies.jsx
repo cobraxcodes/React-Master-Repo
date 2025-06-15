@@ -7,13 +7,13 @@ export const moviesList=[
 
 import { Link } from "react-router-dom"
 
-function Events(){
+function Movies(){
     return(
         <div>
             <ul>
                {moviesList.map(m =>(
                 <li key={m.id}>
-                <Link to={`/events/${m.id}`}>{m.title}</Link>
+                <Link to={`/movies/${m.id}`}>{m.title}</Link>
                 </li>
                ))}
             </ul>
@@ -21,4 +21,4 @@ function Events(){
     )
 }
 
-export default Events
+export default Movies

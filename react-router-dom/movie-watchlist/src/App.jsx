@@ -1,5 +1,5 @@
-//  Home.jsx 1.
-//  Movies.jsx 2. 
+//  Home.jsx 1. - done
+//  Movies.jsx 2.  - done
 // PROTECTED 4.
 //  MovieDetails.jsx (protected) 5.
 // Favorites.jsx (protected) 6.
@@ -9,22 +9,28 @@
 // Secure Favorites route and use useParams for movie details.
 
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {useState} from 'react'
 import Home from './Home'
-import Events from './Movies'
+import Movies from './Movies'
+import Login from './Login'
 
 function App(){
+    const[userLogin, setUserLogIn] = useState(false)
     return(
         <div>
             <BrowserRouter>
             <nav>
                 <Link to='/'>Home</Link>
-                <Link to='/events'>Events</Link>
+                <Link to='/movies'>Movies</Link>
+                <Link to='/login'>Login</Link>
             </nav>
 
             <Routes>
+                <Route path='*' element={<p>404 No Page Found</p>}/>    
                 <Route path='/' element={<Home />} />
-                <Route path='/events' element={<Events />} />
-
+                <Route path='/movies' element={<Movies />} />
+                <Route path='/login' element={<Login setUserLogIn={setUserLogIn}/>} />
+                
             </Routes>
             
             
