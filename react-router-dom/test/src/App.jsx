@@ -9,7 +9,7 @@ import { useState } from 'react'
 
 function App(){
     const login=true
-    const [userLoggedIn, setUserLoggedIn] = useState(false)
+    const setUserLoggedIn = useState(false)
     return(
         <BrowserRouter >
         <nav>

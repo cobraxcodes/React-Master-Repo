@@ -13,7 +13,7 @@ function Login({setUserLoggedIn}){
         e.preventDefault() // prevents page reload when submitting a form
          if(username === "iamadmin" && password === "Admin123"){ 
         setUserLoggedIn(true)
-        navigate('/') // navigates user to the root if logged in
+        navigate('/') // navigates users to the roots page
     }else{
         setError(true)
     }
