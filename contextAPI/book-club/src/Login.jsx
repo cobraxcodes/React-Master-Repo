@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
-function Login({setUserLoggedIn}){
+function Login(){
     // create states for username and password
+    const {setUserLoggedIn} = useContext(UserContext)
     const [username, setUsername]=useState("")
     const [password, setPassword]=useState("")
     // create states for error w/ boolean for values

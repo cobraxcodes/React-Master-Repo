@@ -12,19 +12,21 @@ import Home from './Home'
 import Login from './Login'
 import Books from './Books'
 import BookDetails from './BookDetails'
-import { userContext } from './UserContext'
+import { UserContext } from './UserContext'
+import { useContext } from 'react'
 
 
 function App(){
     const [userLoggedIn, setUserLoggedIn] = useState(false)
 
-
     return(
-     <userContext.Provider value={{userLoggedIn, setUserLoggedIn}}>
+     <UserContext.Provider value={{userLoggedIn, setUserLoggedIn}}>
             <BrowserRouter>
             <nav>
+                
                 <Link to='/'>Home</Link>
                 <Link to='/login'>Login</Link>
+                <p>Status: {userLoggedIn? "Logged in" : "Guest"}</p>
                 {/* <Link to='/books'>Books</Link> */}
             </nav>
 
@@ -40,7 +42,7 @@ function App(){
             </Routes>
               
             </BrowserRouter>
-        </userContext.Provider>
+        </UserContext.Provider>
     )
 }
 
