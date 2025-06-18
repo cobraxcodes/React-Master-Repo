@@ -1,10 +1,13 @@
 //import use state and use navigate
-import { useState } from "react";
+import { useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "./Context";
+
 
 // create a function that expects a setter if the userislogged in 
-function Login({setUserLogIn}){
+function Login(){
 // make states for usernames, passwords, and errors
+    const {setUserLogIn} = useContext(Context)
     const [username, setUsername]=useState("")
     const [password, setPassword]=useState("")
     const [error, setError]=useState(false)

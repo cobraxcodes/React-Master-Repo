@@ -16,11 +16,12 @@ import Login from './Login'
 import Protect from './Protect'
 import Favorites from './Favorites'
 import MovieDetails from './MovieDetails'
+import { Context } from './Context'
 
 function App(){
     const[userLogin, setUserLogIn] = useState(false)
     return(
-        <div>
+        <Context.Provider value={{userLogin, setUserLogIn}}>
             <BrowserRouter>
             <nav>
                 <Link to='/'>Home</Link>
@@ -33,15 +34,15 @@ function App(){
                 <Route path='*' element={<p>404 No Page Found</p>}/>    
                 <Route path='/' element={<Home />} />
                 <Route path='/movies' element={<Movies />} />
-                <Route path='/login' element={<Login setUserLogIn={setUserLogIn}/>} />
+                <Route path='/login' element={<Login />}/>
                 <Route path='/favorites' element={
-                    <Protect userLogin={userLogin} setUserLogin={setUserLogIn}>
+                    <Protect>
                         <Favorites />
                     </Protect>
                 
                 }/>
                 <Route path='/movies/:id' element={
-                    <Protect userLogin={userLogin} setUserLogin={setUserLogIn}>
+                    <Protect>
                         <MovieDetails />
                     </Protect>
                 }/>
@@ -49,7 +50,7 @@ function App(){
             
             
             </BrowserRouter>
-        </div>
+        </Context.Provider>
     )
 }
 
