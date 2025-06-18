@@ -17,12 +17,13 @@ import Pets from './Pets'
 import Login from './Login'
 import Protect from './Protect'
 import Form from './Form'
+import { Context } from './Context'
 
 function App(){
     const[userLogin, setLogin]=useState(false)
     return(
-       <div>
-        <BrowserRouter>
+        <Context.Provider value={{userLogin, setLogin}}>
+            <BrowserRouter>
         <Link to='/'>Home</Link>
         <Link to='/pets'>Pets</Link>
        <Link to= '/form'>Register To Adopt</Link>
@@ -32,18 +33,14 @@ function App(){
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/pets' element={<Pets />}/>
-            <Route path='/login' element={<Login setLogin={setLogin}/>}/>
+            <Route path='/login' element={<Login />}/>
             <Route path='/form' element={
-                <Protect userLogin={userLogin} setLogin={setLogin}>
+                <Protect>
                     <Form />
             </Protect>} />
         </Routes>
-        
-        
-        
-        
         </BrowserRouter>
-       </div>
+        </Context.Provider>
     )
 }
 
