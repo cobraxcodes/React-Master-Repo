@@ -15,12 +15,13 @@ import Lessons from './Lessons';
 import Protect from './Protect';
 import Courses from './Courses';
 import CourseDetails from './CourseDetails';
+import { Context } from './Context';
 
 
 function App(){
     const[userLogin, setUserLogin]=useState(false)
     return(
-        <div>
+        <Context.Provider value={{userLogin, setUserLogin}}>
             <BrowserRouter>
             <Link to='/'>Home</Link>
             <Link to='/login'>Login</Link>
@@ -30,14 +31,14 @@ function App(){
     
             <Routes>
             <Route path='/' element={<Home />}/>            
-            <Route path='/login' element={<Login setUserLogin={setUserLogin} />} /> 
+            <Route path='/login' element={<Login/>} /> 
             <Route path='/lessons' element={
-                <Protect userLogin={userLogin} setUserLogin={setUserLogin}>
+                <Protect >
                     <Lessons />
                 </Protect>
             }/>
             <Route path='/courses' element={
-                <Protect userLogin={userLogin} setUserLogin={setUserLogin}>
+                <Protect>
                     <Courses />
                 </Protect>
             }/>
@@ -46,7 +47,7 @@ function App(){
             
 
             </BrowserRouter>
-        </div>
+       </Context.Provider>
     )
 }
 

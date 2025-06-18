@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "./Context";
 
 
 //create a function that has a setUserLogin variable
-function Login({setUserLogin}){
+function Login(){
+    const {setUserLogin} = useContext(Context)
     // create a state for usernames, password, errors
     const [username, setUsername]=useState("")
     const [password, setPassword]=useState("")
