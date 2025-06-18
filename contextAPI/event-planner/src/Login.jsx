@@ -1,10 +1,13 @@
 // import states and useNavigate
-import { useState } from "react";
+import { useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "./Context";
+
 
 //create a function that expects a setUserLogged in parameter 
-function Login({setUserLoggedIn}){
+function Login(){
     // create states for username, password, error
+    const {setUserLoggedIn} = useContext(Context)
     const [username, setUsername]=useState("")
     const [password, setPassword]=useState("")
     const [error, setError]=useState(false)

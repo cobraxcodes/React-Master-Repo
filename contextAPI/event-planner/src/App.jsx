@@ -16,17 +16,19 @@ import Login from './Login'
 import Protect from './Protect'
 import RegisterForm from './RegisterForm'
 import EventDetails from './EventDetails'
+import { Context } from './Context'
 
 function App(){
     const [userLoggedIn, setUserLoggedIn]=useState(false)
     return(
-        <div>
+        <Context.Provider value={{userLoggedIn, setUserLoggedIn}}>
             <BrowserRouter>
             <nav>
              <Link to='/'>Home</Link>
              <Link to='/events'>Events</Link>
              <Link to='/login'>Login</Link>
               {userLoggedIn && <Link to='/register'>Register</Link>}
+             <p>Status: {userLoggedIn? "Welcome Member!": "Hello, Guest"}</p>
             </nav>
 
 
@@ -34,10 +36,10 @@ function App(){
             <Route path='/' element={<Home />}/>
             <Route path='/events' element={<Events />}/>
             <Route path='/login' element={
-                <Login setUserLoggedIn={setUserLoggedIn} />
+                <Login/>
             }/>
             <Route path='/register' element={
-                <Protect userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn}>
+                <Protect>
                     <RegisterForm />
                 </Protect>
             }/>
@@ -47,7 +49,7 @@ function App(){
             </BrowserRouter>
 
            
-        </div>
+        </Context.Provider>
     )
 }
 export default App

@@ -1,8 +1,11 @@
 import Login from "./Login";
+import { Context } from "./Context";
+import { useContext } from "react";
 
-function Protect({userLoggedIn, setUserLoggedIn, children}){
+function Protect({children}){
+    const {userLoggedIn, setUserLoggedIn} = useContext(Context)
     if(!userLoggedIn){
-        return <Login setUserLoggedIn={setUserLoggedIn} />
+        return <Login />
     }else{
         return children
     }
