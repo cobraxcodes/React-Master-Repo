@@ -6,7 +6,7 @@
 // Home Component - done
 // context api wrapper - done
 // Login Component - done
-// protect component
+// protect component - done
 // react query wrapper
 // create a joke component with button
 
