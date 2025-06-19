@@ -31,7 +31,6 @@ function Login(){
                 <button type="submit">Login</button>
                 </div>
             </form>
-
             {error && <p>Login Failed!</p>}
         </div>
     )
