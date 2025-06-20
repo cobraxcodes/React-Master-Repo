@@ -5,7 +5,7 @@
 
 //Home  - done
 //Context provider - done
-// login page 
+// login page - done
 // Query client 
 // cat page
 // protect
@@ -14,6 +14,7 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import { useState } from 'react'
 import { Context } from './Context'
 import Home from './Home'
+import Login from './Login'
 
 function App(){
     const[userLogin, setUserLogin]=useState(false)
@@ -26,6 +27,7 @@ function App(){
 
         <Routes>
         <Route path='/' element={<Home />}/>
+        <Route path='/login' element={<Login />}/>
 
         </Routes>
         
