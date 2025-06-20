@@ -12,7 +12,8 @@ const Cat = () =>{
     const {data, isLoading, isError, refetch } = useQuery({
         queryKey: ['cats'],
         queryFn: async () => await axios.get(URL).then(res => res.data),
-        refetchOnWindowFocus: false
+        refetchOnWindowFocus: false,
+        staleTime: 1000 * 60 * 5 // for react-query caching //stale time , and caching time
     })
 
     useEffect(() =>{
