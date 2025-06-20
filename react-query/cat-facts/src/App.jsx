@@ -6,7 +6,7 @@
 //Home  - done
 //Context provider - done
 // login page - done
-// Query client 
+// Query client - done
 // cat page
 // protect
 
@@ -15,6 +15,7 @@ import { useState } from 'react'
 import { Context } from './Context'
 import Home from './Home'
 import Login from './Login'
+import Cat from './Cat'
 
 function App(){
     const[userLogin, setUserLogin]=useState(false)
@@ -28,6 +29,7 @@ function App(){
         <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/login' element={<Login />}/>
+        <Route path='/cats' element={<Cat />}/>
 
         </Routes>
         
