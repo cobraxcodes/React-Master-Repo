@@ -4,10 +4,10 @@ import { Context } from "./Context";
 
 
 function Login(){
-    const {userLogin, setUserLogin} = useContext(Context)
-    const [username,setUsername]=useState("")
-    const [password,setPassword]=useState("")
-    const[error, setError]=useState(false)
+    const {userLogin, setUserLogin,username,setUsername,password,setPassword, error, setError} = useContext(Context)
+    // const [username,setUsername]=useState("")
+    // const [password,setPassword]=useState("")
+    // const[error, setError]=useState(false)
     const navigate = useNavigate()
 
 
@@ -22,6 +22,7 @@ function Login(){
     }
     return(
         <div>
+            <h1>Login</h1>
             <form onSubmit={handleLogin}>
                 <h3>Username</h3>
                 <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter your username ..." />
