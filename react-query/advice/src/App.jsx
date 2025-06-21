@@ -15,6 +15,7 @@
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import { useState } from 'react';
 import { Context } from './Context';
+import ErrorBoundary from './ErrorBoundary';
 import Home from "./Home";
 import Advice from './Advice';
 import Protect from './Protect'
@@ -37,7 +38,9 @@ function App(){
           
         <Routes>
             <Route path='/' element={<Home />}/>
+            <ErrorBoundary>
             <Route path='/signup' element={<Signup />}/>
+            </ErrorBoundary>
             {/* <Route path='/login' element={<Login />}/> */}
             <Route path='/advice' element={
                 <Protect>
