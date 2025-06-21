@@ -16,20 +16,18 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import { useState } from 'react';
 import { Context } from './Context';
 import Home from "./Home";
-import Login from './Login';
 import Advice from './Advice';
 import Protect from './Protect'
 import Signup from './Signup';
-import Logout from './Logout';
 
 function App(){
     const [userLogin, setUserLogin] = useState(false)
-    const [username,setUsername]=useState("")
+    const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     const[error, setError]=useState(false)
 
     return(
-        <Context.Provider value={{userLogin,setUserLogin,username, setUsername,password,setPassword, error, setError}}>
+        <Context.Provider value={{userLogin,setUserLogin,email, setEmail,password,setPassword, error, setError}}>
         <BrowserRouter>
         <nav>
               <Link to='/'>Home</Link>
@@ -40,13 +38,13 @@ function App(){
         <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/signup' element={<Signup />}/>
-            <Route path='/login' element={<Login />}/>
+            {/* <Route path='/login' element={<Login />}/> */}
             <Route path='/advice' element={
                 <Protect>
                     <Advice />
                 </Protect>
             }/>
-            <Route path='/logout' element={<Logout />}/>
+            {/* <Route path='/logout' element={<Logout />}/> */}
         </Routes>
         </BrowserRouter>
         </Context.Provider>

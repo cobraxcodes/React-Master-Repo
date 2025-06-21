@@ -1,44 +1,68 @@
-import Login from './Login'
-import {useNavigate} from 'react-router-dom'
-import { useContext, useState } from 'react'
-import { Context } from './Context'
+ import { useContext } from "react";
+ import { Context } from "./Context";
+ import { useState } from "react";
+ import { useNavigate } from 'react-router-dom'
+ import axios from 'axios'
 
-function Signup(){
-      //states for username, email, and password, error  
-    const {userLogin, setUserLogin, username, setUsername, password, setPassword} = useContext(Context)
+ function Signup(){
+    const {email, setEmail, password, setPassword}=useContext(Context)
     const [signupErr, setSignupErr]=useState(false)
-    const [email, setEmail]=useState("")
-     // useNavigate after signup to login 
-    const navigate = useNavigate('/login')
-    function handleSignup(event){
-        event.preventDefault()
-     if(username && password && email){
-        setUserLogin(true)
-        navigate('/login')
-     }else{
-        setSignupErr(true)
-     }
-    }
-
-     return(
-        <div>
-            <h2>Sign Up</h2>
-            <div>
-                <form onSubmit={handleSignup}>
-                    <h3>Email:</h3>
-                    <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter email...'/>
-                    <h3>Username</h3>
-                    <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Enter username ...'/>
-                    <h3>Password:</h3>
-                    <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter password ...'/>
-                    <div>
-                        <button type='submit'>Sign Up!</button>
-                    </div>
-                </form>
-            </div>
-            {signupErr && <p>Please fill all fields!</p>}
-        </div>
-     )
-}
-export default Signup
+    const navigate = useNavigate()
     
+
+   async function handleSignup(event){
+        event.preventDefault()
+        try{
+            if(email.length < 3){
+                setSignupErr("Please provide a valid email!") 
+                return;
+            }
+            if(password.length < 3){
+                setSignupErr("Password must be at least 6 characters")
+                return;
+            }
+            const URL = "https://reqres.in/api/register"
+            const response = await axios.post(URL, {
+                email,
+                password
+            },{
+               headers:{
+                'Content-Type': 'application/json'
+               }
+            })
+            navigate('/login')
+            console.log(response.data)
+            console.log('User successfully created!')
+            
+        }catch(error){
+            console.error
+            setSignupErr("Unable to Signup!")
+        }
+    }
+    return(
+        <div>
+            <h1>Be A Member!</h1>
+            <div>
+            <form onSubmit={handleSignup}>
+            <h3>Email</h3>
+            <input type="text" value={email} placeholder="enter email..." onChange={(e) => setEmail(e.target.value)} />
+            <h3>Password</h3>
+          <input type="password" value={password} placeholder="enter password..." onChange={(e) => setPassword(e.target.value)} />
+          <div>
+            <button type="submit">Signup</button>
+          </div>
+            </form>
+            </div>
+
+            {signupErr && <p>{signupErr}</p>}
+        </div>
+    )
+    
+ }
+
+ export default Signup
+
+
+//  // test email
+//    "email": "eve.holt@reqres.in",
+//   "password": "pistol"
