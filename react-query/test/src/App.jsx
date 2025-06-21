@@ -5,6 +5,7 @@ import Signup from './Signup'
 import Home from './Home'
 import Login from './Login';
 import Applications from './Applications';
+import Logout from './Logout';
 
 
 
@@ -28,6 +29,7 @@ function App(){
           <Route path='/' element={<Home />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/applications' element={<Applications /> } />
+          <Route path='/logout' element={<Logout />} />
         </Routes>
 
       

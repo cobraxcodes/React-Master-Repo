@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useQuery } from '@tanstack/react-query'
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 
 function Applications(){
@@ -16,9 +17,12 @@ function Applications(){
 
     return(
         <div>
+            <nav>
+                <Link to='/logout'>Logout</Link>
+            </nav>
             <h1>Applications</h1>
             {data.applications.map((app) => (
-                <div>
+                <div key={app._id}>
                 <h4>Name:  {app.name}</h4>
                 <h4>Application Date: {new Date (app.applicationDate).toLocaleDateString()}</h4>
                 <h4>Zipcode: {app.zipCode} </h4>
