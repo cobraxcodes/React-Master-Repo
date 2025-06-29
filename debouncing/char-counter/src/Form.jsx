@@ -30,8 +30,7 @@ function handleForm(event){
     const handleChange = (e) =>{
             debounceChange(e.target.value)
     }
-    
-    
+
 
 return(
 <div>
