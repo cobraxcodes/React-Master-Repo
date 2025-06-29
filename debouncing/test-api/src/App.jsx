@@ -4,6 +4,7 @@ import { Context } from './Context'
 import Home from './Home'
 
 const Application = lazy(() => import('./Application'))
+const Search = lazy(() => import('./Search'))
 
 function App(){
   const [search, setSearch] = useState('')
@@ -19,6 +20,7 @@ function App(){
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/application' element={<Suspense fallback={<p>Loading ...</p>}><Application /></Suspense>}/>
+      <Route path='/search' element={<Suspense fallback={<p>Loading ...</p>}><Search/></Suspense>}/>
     </Routes>
     
     

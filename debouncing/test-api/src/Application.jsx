@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import axios from 'axios'
+import Search from './Search'
 
 
 function Applications(){
@@ -24,11 +25,15 @@ function Applications(){
         <div>
             <h1>Applications</h1>
             {data?.applications.map((app) =>(
-                <div key={app._id}>
+                <div >
+                    <ul>
+                        <li key={app._id}>
                 <p>Name: {app.name}</p>
                 <p>Application Date:  {new Date(app.applicationDate).toLocaleDateString()}</p>
                 <p>Rank By Zipcode: {app.rank}</p>
                 <p>Zipcode: {app.zipCode}</p>
+                </li>
+                </ul>
                 </div>
             ))}
         </div>
