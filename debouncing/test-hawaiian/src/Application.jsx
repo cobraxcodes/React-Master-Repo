@@ -28,7 +28,7 @@ function Applications(){
                 <div >
                     <ul>
                         <li key={app._id}>
-                <p>Name: {app.name}</p>
+                <h3>Name: {app.name}</h3>
                 <p>Application Date:  {new Date(app.applicationDate).toLocaleDateString()}</p>
                 <p>Rank By Zipcode: {app.rank}</p>
                 <p>Zipcode: {app.zipCode}</p>
