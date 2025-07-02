@@ -1,0 +1,27 @@
+*{
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.btn{
+  background-color: black;
+  color: wheat;
+  height: 3rem;
+  width: 6rem;
+}
+.box1{
+  background-color: green;
+  color: wheat;
+  height: 9rem;
+  width: 9rem;
+}
+.drag{
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: brown;
+  height: 5rem;
+  width: 5rem;
+
+}
