@@ -9,7 +9,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest"
-
   },
   "dependencies": {
     "jest-environment-jsdom": "^30.0.4",
